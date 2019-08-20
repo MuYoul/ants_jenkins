@@ -3,11 +3,11 @@ node {
 	
     def msg = """
         ******************
-		* stage test
-		******************
+	* tage test
+	******************
         """
 
-    stage('PREVIEW INFORMATION') {
+    stage('[INFO] PREVIEW INFORMATION') {
         echo "배포 정보입니다."
         print msg
         sleep(time: 5, unit: "SECONDS")
@@ -15,5 +15,23 @@ node {
 
     dir ("${env.WORKSPACE}") {
         sh 'pwd'
+    }
+	
+    stage('[INFO] SENCOND STAGE - PREPROCESSING') {
+        echo "전역 변수 처리"
+        print msg
+        sleep(time: 5, unit: "SECONDS")
+    }
+	
+    stage('[INFO] THRID STAGE - MAIN PROCESSING') {
+        echo "메인 엔진 설치 및 설정"
+        print msg
+        sleep(time: 5, unit: "SECONDS")
+    }
+	
+    stage('[INFO] FORUTH STAGE - POST PROCESSING') {
+        echo "각종 설정 및 실행"
+        print msg
+        sleep(time: 5, unit: "SECONDS")
     }
 }
