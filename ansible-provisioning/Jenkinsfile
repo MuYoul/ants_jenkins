@@ -1,0 +1,19 @@
+node {
+    git url: 'https://github.com/MuYoul/ants_ansible.git', branch: 'master'
+	
+    def msg = """
+        ******************
+		* stage test
+		******************
+        """
+
+    stage('PREVIEW INFORMATION') {
+        echo "배포 정보입니다."
+        print msg
+        sleep(time: 5, unit: "SECONDS")
+    }
+
+    dir ("${env.WORKSPACE}") {
+        sh 'pwd'
+    }
+}
