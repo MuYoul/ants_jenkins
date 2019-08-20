@@ -3,7 +3,7 @@ node {
 	
     def msg = """
         ******************
-	* tage test
+	* stage test
 	******************
         """
 
